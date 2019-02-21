@@ -6,4 +6,11 @@ module.export = class MultimodalGraph {
 
     }
 
+    writeToFile(path) {
+        fs.writeFile(path, JSON.stringify(this), (err) => {
+            if(err) throw err;
+            
+            console.log("file created !!");
+        })
+    }
 }
