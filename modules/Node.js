@@ -12,12 +12,26 @@ module.exports = class Node {
 
     }
 
+    // methode to add an adjacent
+
     addAdjacent(id) {
         this.getAdjacents().push(
             new Adjacent({
                 destination: id
-            });
-        )
+            })
+        );
+    }
+
+
+    // method to get an adjacent, it takes an id and 
+    // returns the adjacent if found, if not it returns -1
+    
+    getAdjacent(id) {
+        let adjacent = this.getAdjacents()[id];
+
+        if(adjacent != null)
+            return adjacent;
+        return -1;
     }
 
 }
