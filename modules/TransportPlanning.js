@@ -2,8 +2,8 @@ module.exports = class TransportPlanning {
     constructor({walk, bus, metro, tramway}) {
 
         /*
-        walk, bus, metro and tramway are arrays of departs
-        each elements means the mode, time and
+        walk, bus, metro and tramway are plannings, each of theme has a distance
+        and an array of departs
         */
 
         // initializing in case of an empty array is passed to the constructor
@@ -12,7 +12,6 @@ module.exports = class TransportPlanning {
         bus = bus || [];
         metro = metro || [];
         tramway = tramway || [];
-
 
 
         // getters and setters
@@ -34,5 +33,9 @@ module.exports = class TransportPlanning {
         };
 
     }
+
+    // methodes
+
+    addDepart()
 }
 
