@@ -1,3 +1,5 @@
+const Depart = require('./Depart');
+
 module.exports = class Planning {
 
     constructor({distance, departs}) {
@@ -14,5 +16,20 @@ module.exports = class Planning {
         this.getDistance = () => distance;
         this.getDeprats = () => departs;
 
+    }
+
+    // methodes
+
+    addDepart(time, price) {
+        this.getDeprats().push(new Depart({
+            departTime: time,
+            price: price
+        }));
+    }
+
+    getFeasibleDeparts(time) {
+        return this.getDeprats().filtre()
+
+        //TODO
     }
 }
