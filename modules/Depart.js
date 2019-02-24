@@ -1,12 +1,18 @@
 module.exports = class Depart {
 
-    constructor({departTime, price}) { 
+    /*
+
+    Depart s are used in the planning, each depart has a time, price and a vehicle
+
+    */
+
+    constructor({departTime, price, vehicle}) { 
 
         //getters and setters
 
         this.getDepartTime = () => departTime;
-        //this.getDistance = () => distance;
         this.getPrice = () => price;
+        this.getVehicle = () => vehicle;
     }
 
 }
