@@ -2,8 +2,10 @@ module.exports = class TransportPlanning {
     constructor({walk, bus, metro, tramway}) {
 
         /*
+
         walk, bus, metro and tramway are plannings, each of theme has a distance
         and an array of departs
+        
         */
 
         // initializing in case of an empty array is passed to the constructor
@@ -36,6 +38,6 @@ module.exports = class TransportPlanning {
 
     // methodes
 
-    addDepart()
+    //addDepart()
 }
 
