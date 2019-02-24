@@ -2,6 +2,13 @@ const Depart = require('./Depart');
 
 module.exports = class Planning {
 
+    /*
+
+    Plannings are used in the TranspotPlanning, each transportMode has a planning,
+    a planning has a distance and departsb which is a list of Departs
+
+    */
+   
     constructor({distance, departs}) {
 
         // initializing properties
