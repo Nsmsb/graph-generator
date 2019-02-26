@@ -27,22 +27,21 @@ module.exports = class Node {
     // returns the adjacent if found, if not it returns -1
     
     getAdjacent(id) {
-        let adjacent = this.getAdjacents()[id];
+        adjacents.forEach(adjacent => {
+            if(adjacent.getDestination() == id)
+                return adjacent;
+        });
 
-        if(adjacent != null)
-            return adjacent;
         return -1;
     }
 
     // methode to check if a node is adjacent to the current one
 
     isAdjacent(id) {
-        adjacents.forEach(adjacent => {
-            if(adjacent.getDestination() == id)
-                return true;
-        });
+        if(this.getAdjacent(id) == -1)
+            return false;
 
-        return false;
+        return true;
     }
 
 }
