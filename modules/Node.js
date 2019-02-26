@@ -26,12 +26,13 @@ module.exports = class Node {
     // method to get an adjacent, it takes an id and 
     // returns the adjacent if found, if not it returns -1
     
-    getAdjacent(id) {
-        let adjacent = this.getAdjacents()[id];
+    isAdjacent(id) {
+        adjacents.forEach(adjacent => {
+            if(adjacent.getDestination() == id)
+                return true;
+        });
 
-        if(adjacent != null)
-            return adjacent;
-        return -1;
+        return false;
     }
 
 }
