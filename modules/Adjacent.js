@@ -1,4 +1,6 @@
 const TransportPlanning = require('./TransportPlanning');
+const planning = require('./Planning');
+const Depart = require('./Depart');
 
 module.exports = class Adjacent {
 
@@ -20,5 +22,19 @@ module.exports = class Adjacent {
         this.getTransportPlanning = () => transportPlanning;
         
     }
+
+    /****** methodes ******/
+
+    addPlanning(departTime, price, vehicle) {
+        this.getTransportPlanning()
+            .getPlanning()[vehicle]
+            .push(new Depart({
+                departTime: departTime,
+                price: price,
+                vehicle: vehicle
+            }));
+    }
+
+    
 
 }
