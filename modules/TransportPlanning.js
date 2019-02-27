@@ -18,12 +18,12 @@ module.exports = class TransportPlanning {
 
         // getters and setters
 
-        this.getPlanning = () => {
-            walk,
-            bus,                            
-            metro,
-            tramway
-        };
+        this.getPlanning = () => ({
+            walk: walk,
+            bus: bus,                            
+            metro: metro,
+            tramway: tramway
+        });
 
         this.getPlanningMixed = () => {
             
