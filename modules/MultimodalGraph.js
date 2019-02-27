@@ -1,6 +1,7 @@
 const fs = require('fs');
 const Node = require('./Node');
 const TransportMode = require('./TransportMode');
+const Depart = require('./Depart');
 
 module.exports = class MultimodalGraph {
 
@@ -23,6 +24,18 @@ module.exports = class MultimodalGraph {
             });
             
         }
+
+        // filling the plannings
+
+        transportModes.forEach(tm => {
+            let path = tm.getPath();
+
+            tm.getDeparts().forEach(dp => {
+                for(let i = 0; i < path.length-1; i++) {
+                    nodes[path[i]].getAdjacent(path[i+1]).addPlanning(dp, Math.random()*10, tm.getType());
+                }
+            });
+        });
 
     }
 
