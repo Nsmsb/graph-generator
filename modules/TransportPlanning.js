@@ -29,8 +29,8 @@ module.exports = class TransportPlanning {
             
             return (
                 walk.concat(bus)
-                .concat(metro)
-                .concat(tramway)
+                    .concat(metro)
+                    .concat(tramway)
             );
         };
 
