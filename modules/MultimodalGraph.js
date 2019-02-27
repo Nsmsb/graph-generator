@@ -20,7 +20,7 @@ module.exports = class MultimodalGraph {
 
             // adding its adjacents
             graph[i].adjacencyList.forEach(adjacent => {
-                this.nodes[i].addAdjacent(adjacent);
+                this.nodes[i].addAdjacent(adjacent.destination);
             });
             
         }
@@ -32,7 +32,9 @@ module.exports = class MultimodalGraph {
 
             tm.getDeparts().forEach(dp => {
                 for(let i = 0; i < path.length-1; i++) {
-                    nodes[path[i]].getAdjacent(path[i+1]).addPlanning(dp, Math.random()*10, tm.getType());
+                    let temp = this.nodes[path[i]];
+                    temp = temp.getAdjacent(path[i+1]);
+                    this.nodes[path[i]].getAdjacent(path[i+1]).addPlanning(dp, Math.random()*10, tm.getType());
                 }
             });
         });
