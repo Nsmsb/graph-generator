@@ -15,7 +15,7 @@ module.exports = class Planning {
         if(distance == null)
             throw new Error("A distance must be assigned.");
         
-            departs = departs || [];
+        departs = departs || [];
 
 
         // getters & setters
@@ -35,7 +35,7 @@ module.exports = class Planning {
     }
 
     getFeasibleDeparts(time) {
-        return this.getDeprats().filtre()
+        return this.getDeprats().filtre();
 
         //TODO
     }
